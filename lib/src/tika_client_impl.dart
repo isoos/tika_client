@@ -18,4 +18,12 @@ class TikaClientImpl implements TikaClient {
     final rs = await _client.send(rq);
     return await rs.readAsString();
   }
+
+  @override
+  Future<String> parseBufferAsPlainText(List<int> buffer) async {
+    final rq = new Request('PUT', '$_url/tika',
+        headers: {'Accept': 'text/plain'}, body: buffer);
+    final rs = await _client.send(rq);
+    return await rs.readAsString();
+  }
 }
