@@ -1,6 +1,6 @@
 name: tika_client
-description: Dart bindings for Tika server REST API.
-version: 1.0.1
+description: Dart bindings for Tika server REST API. Apache Tika detects and extracts metadata and text from over a thousand different file types (such as PPT, XLS, and PDF).
+version: 1.0.1+1
 homepage: https://github.com/isoos/tika_client
 author: Istvan Soos <istvan.soos@gmail.com>
 

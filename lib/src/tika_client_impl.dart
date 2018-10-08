@@ -8,7 +8,7 @@ class TikaClientImpl implements TikaClient {
   final Client _client;
 
   TikaClientImpl(String url, Client client)
-      : _url = url.endsWith('/') ? url.substring(0, url.length - 1) : url,
+      : _url = _stripEndingSlash(url),
         _client = client;
 
   @override
@@ -26,4 +26,8 @@ class TikaClientImpl implements TikaClient {
     final rs = await _client.send(rq);
     return await rs.readAsString();
   }
+}
+
+String _stripEndingSlash(String url) {
+  return url.endsWith('/') ? url.substring(0, url.length - 1) : url;
 }
